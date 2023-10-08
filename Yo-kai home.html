@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yo-kai Home</title>
+    Los videos pueden tardar un tiempo en cargar.
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://static.wikia.nocookie.net/yokaiwatch/images/5/52/YokaiWorldArea.jpg/revision/latest?cb=20201212024801') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .temporada-container {
+            display: inline-flex; /* Cambia "flex" a "inline-flex" para alinear los videos en horizontal */
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            margin: 20px 0; /* Espacio entre las temporadas */
+        }
+        .video {
+            width: 300px;
+            margin: 20px;
+            cursor: pointer;
+            position: relative;
+        }
+        .video iframe {
+            width: 100%;
+            height: 65%;
+        }
+        .video-description {
+            margin-top: 10px;
+            text-align: center;
+        }
+        .fullscreen-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        .fullscreen-video {
+            width: 90%;
+            height: 83vh;
+        }
+        .fullscreen-button,
+        .back-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            color: #fff;
+            transition: background-color 0.2s;
+        }
+        .fullscreen-button {
+            background-color: #ffc107; /* Amarillo */
+        }
+        .fullscreen-button:hover {
+            background-color: #ffca2a; /* Amarillo más claro al pasar el ratón */
+        }
+        .back-button {
+            background-color: #ff5733; /* Rojo claro */
+        }
+        .back-button:hover {
+            background-color: #ff7551; /* Rojo claro más claro al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yo-kai Home</h1>
+    </header>
+
+    <!-- Temporada 1 -->
+    <div class="temporada-container">
+        <h2>Temporada 1</h2>
+        <!-- Episodio 1 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/12bdV9yHAv0Su9clGKssBPrHRcbaSi7op/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 1: Yo-kai Watch EP1</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/12bdV9yHAv0Su9clGKssBPrHRcbaSi7op/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 2 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/12gGqRM-Q6HsqownIVLTX58oeeRZLq1Ks/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 2: Yo-kai Watch EP2</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/12gGqRM-Q6HsqownIVLTX58oeeRZLq1Ks/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 3 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/135zibtD45Zw6VvRvk9DJ6Gr13PxeS4r7/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 3: Yo-kai Watch EP3</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/135zibtD45Zw6VvRvk9DJ6Gr13PxeS4r7/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 4 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/13HGGU7frW_qT7cNFafyjdR__nUtiGynx/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 4: Yo-kai Watch EP4</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13HGGU7frW_qT7cNFafyjdR__nUtiGynx/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 5 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/13RzxVCgXGUBk2ZFan2dcujxr4Rkic0I9/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 5: Yo-kai Watch EP5</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13RzxVCgXGUBk2ZFan2dcujxr4Rkic0I9/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 6 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/13ixVCgEfLaZDslVL1wxIM9YcsEGbr-eT/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 6: Yo-kai Watch EP6</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13ixVCgEfLaZDslVL1wxIM9YcsEGbr-eT/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 7 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/14SSPkZEOs8i7Vt4GPNhai28SwZeEMe9d/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 7: Yo-kai Watch EP7</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14SSPkZEOs8i7Vt4GPNhai28SwZeEMe9d/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 8 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/14iFgzHL3M_PjkP2xelv5j18AVHwG7c3w/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 8: Yo-kai Watch EP8</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14iFgzHL3M_PjkP2xelv5j18AVHwG7c3w/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 9 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/15UwmbE0z9AlhDfq_QEaPkHFHUc-dLQON/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 9: Yo-kai Watch EP9</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/15UwmbE0z9AlhDfq_QEaPkHFHUc-dLQON/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 10 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/15xV9pzxP5aaDiLEiV1_AmZ1tCfaG1F3P/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 10: Yo-kai Watch EP10</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/15xV9pzxP5aaDiLEiV1_AmZ1tCfaG1F3P/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 11 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/163ZrWeyQZ9No0DbuTQGNA_dDMS9Px08g/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 11: Yo-kai Watch EP11</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/163ZrWeyQZ9No0DbuTQGNA_dDMS9Px08g/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 12 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16Cb5JR-Pm5eYChUKH1-fxb6XjwfaWMsq/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 12: Yo-kai Watch EP12</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16Cb5JR-Pm5eYChUKH1-fxb6XjwfaWMsq/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 13 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16J3p-KBn3iDnwAMc0Za5QVbvcHqmfrKH/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 13: Yo-kai Watch EP13</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16J3p-KBn3iDnwAMc0Za5QVbvcHqmfrKH/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 14 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16PPTFDvklNLmpGTy83nWwNRZT8IjOFfW/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 14: Yo-kai Watch EP14</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16PPTFDvklNLmpGTy83nWwNRZT8IjOFfW/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 15 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16QETdCtt2OF7Kb_lbCAu3ThGHPeR7FoD/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 15: Yo-kai Watch EP15</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16QETdCtt2OF7Kb_lbCAu3ThGHPeR7FoD/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 16 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16YNPPQFzDfKQFIWWJEv5TgfYuLz2PNJh/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 16: Yo-kai Watch EP16</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16YNPPQFzDfKQFIWWJEv5TgfYuLz2PNJh/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 17 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16fGyykMAUpSJvTyfkrCN1aa6nX8X00PJ/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 17: Yo-kai Watch EP17</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16fGyykMAUpSJvTyfkrCN1aa6nX8X00PJ/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 18 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16aPAG7gpXEM1b2Ex0RZxV3V7KNCH25nf/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 18: Yo-kai Watch EP18</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16aPAG7gpXEM1b2Ex0RZxV3V7KNCH25nf/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 19 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16jjdPeidMkLUb7QJKycuOG0UHibi51wy/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 19: Yo-kai Watch EP19</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16jjdPeidMkLUb7QJKycuOG0UHibi51wy/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 20 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16mECMTsLrz0z--mAq15CAkhN-CGhfL6T/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 20: Yo-kai Watch EP20</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16mECMTsLrz0z--mAq15CAkhN-CGhfL6T/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 21 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16msGcyCSPy8xAh-2VbhDg5wu4gLc8YBs/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 21: Yo-kai Watch EP21</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16msGcyCSPy8xAh-2VbhDg5wu4gLc8YBs/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 22 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16o_y-yhb4b0LV33RAarqExV5Dc_qU5HA/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 22: Yo-kai Watch EP22</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16o_y-yhb4b0LV33RAarqExV5Dc_qU5HA/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 23 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/16ynT98_Co3Nnk18_w6Gr9tDiXcH9B3xg/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 23: Yo-kai Watch EP23</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/16ynT98_Co3Nnk18_w6Gr9tDiXcH9B3xg/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 24 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/170ly5wLlUgkgMdDxEF85RQQvo26Yov3e/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 24: Yo-kai Watch EP24</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/170ly5wLlUgkgMdDxEF85RQQvo26Yov3e/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 25 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/172TjMOM-ZtF9TukUEV8Ehu87D3CHxJlP/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 25: Yo-kai Watch EP25</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/172TjMOM-ZtF9TukUEV8Ehu87D3CHxJlP/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+        <!-- Episodio 26 -->
+        <div class="video">
+            <iframe width="300" height="169" src="https://drive.google.com/file/d/19K-RxBRYfElFbZg0jhspjW35FDxMoVJw/preview"></iframe>
+            <div class="video-description">
+                <p>Episodio 26: Yo-kai Watch EP26</p>
+                <button class="fullscreen-button" data-src="https://drive.google.com/file/d/19K-RxBRYfElFbZg0jhspjW35FDxMoVJw/preview">Ver en Pantalla Completa</button>
+            </div>
+        </div>
+    </div>
+
+   <!-- Temporada 2 -->
+<div class="temporada-container">
+    <h2>Temporada 2</h2>
+    <!-- Episodio 27 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/17XWb_L1FIx5aAMPwO0uyhk3c2xqDYxNh/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 27: Yo-kai Watch EP27</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/17XWb_L1FIx5aAMPwO0uyhk3c2xqDYxNh/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 28 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/17vn9-RuclIxCeig-nxI875nEnflhSeXE/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 28: Yo-kai Watch EP28</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/17vn9-RuclIxCeig-nxI875nEnflhSeXE/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 29 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/19KcmvvENNIUC3xIqpkyl-WALAihQN9mw/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 29: Yo-kai Watch EP29</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/19KcmvvENNIUC3xIqpkyl-WALAihQN9mw/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 30 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1AGCuQFmdgUX7dgtCywpW1MwTWQbmOMl-/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 30: Yo-kai Watch EP30</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1AGCuQFmdgUX7dgtCywpW1MwTWQbmOMl-/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 31 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1Af8dxlnwO6yy2XJ4jxkex7WkNLsOKtre/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 31: Yo-kai Watch EP31</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1Af8dxlnwO6yy2XJ4jxkex7WkNLsOKtre/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 32 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1AkEFpmNl-fRoCxjxLsMLg1KQMT0mtNGo/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 32: Yo-kai Watch EP32</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1AkEFpmNl-fRoCxjxLsMLg1KQMT0mtNGo/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 33 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1AqX9lLodB5Vs68dZy28hUJdfO0BQfSz-/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 33: Yo-kai Watch EP33</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1AqX9lLodB5Vs68dZy28hUJdfO0BQfSz-/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 34 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1AvGRRFULiPy24XIWSBp1omZZgxrcEJLZ/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 34: Yo-kai Watch EP34</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1AvGRRFULiPy24XIWSBp1omZZgxrcEJLZ/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 35 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1B4RWRRXFlrnHtJ4ih2fMBeaSTFBvZD6X/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 35: Yo-kai Watch EP35</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1B4RWRRXFlrnHtJ4ih2fMBeaSTFBvZD6X/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 36 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1BHQhvWpiiCDfUqoFoqt-vJWCto3728a-/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 36: Yo-kai Watch EP36</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1BHQhvWpiiCDfUqoFoqt-vJWCto3728a-/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 37 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1BKHFSzhx-ua0nN8dFSEYOLjgvpc1MMHS/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 37: Yo-kai Watch EP37</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1BKHFSzhx-ua0nN8dFSEYOLjgvpc1MMHS/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 38 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1BTLAbbgEhM7M3Rhj0ha6HyR_3XmNEasa/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 38: Yo-kai Watch EP38</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1BTLAbbgEhM7M3Rhj0ha6HyR_3XmNEasa/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 39 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1B_sj1hSzQfDArjH-iRQ5txYA3ehzNaTo/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 39: Yo-kai Watch EP39</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1B_sj1hSzQfDArjH-iRQ5txYA3ehzNaTo/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 40 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DkDCOkd6wcisnXZeJoods2_GQ99Pgg1X/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 40: Yo-kai Watch EP40</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DkDCOkd6wcisnXZeJoods2_GQ99Pgg1X/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 41 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1CHpussCGBpX_3j1ECARH9ssMaoLmMOer/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 41: Yo-kai Watch EP41</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1CHpussCGBpX_3j1ECARH9ssMaoLmMOer/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 42 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1Dd6c3JnI7HNxRVX5MtQxUzsEN-WAqDsG/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 42: Yo-kai Watch EP42</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1Dd6c3JnI7HNxRVX5MtQxUzsEN-WAqDsG/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 43 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DdfiSsIAAoSJEx_vkzTD76dkf6AGuQD8/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 43: Yo-kai Watch EP43</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DdfiSsIAAoSJEx_vkzTD76dkf6AGuQD8/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 44 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DdLiXIqb8lQu01mT90uLb_Er-VQQmIup/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 44: Yo-kai Watch EP44</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DdLiXIqb8lQu01mT90uLb_Er-VQQmIup/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 45 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1D_a2fNaYIuuIrTYHt1mnzA858s2OqUXO/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 45: Yo-kai Watch EP45</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1D_a2fNaYIuuIrTYHt1mnzA858s2OqUXO/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 46 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DqiKMNvwhZGBaz5kdzHzVa9KxQp28zWS/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 46: Yo-kai Watch EP46</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DqiKMNvwhZGBaz5kdzHzVa9KxQp28zWS/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 47 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1E3Jyr94uyBbIFlniHGKgkt7ZJ0TlJfwU/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 47: Yo-kai Watch EP47</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1E3Jyr94uyBbIFlniHGKgkt7ZJ0TlJfwU/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 48 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1EAdHkIPkz-4RCit7xwQwtq17qIRTivtV/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 48: Yo-kai Watch EP48</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EAdHkIPkz-4RCit7xwQwtq17qIRTivtV/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 49 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DVuxjhiPHhVySh4rS5uyegfhuhWnqlkd/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 49: Yo-kai Watch EP49</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DVuxjhiPHhVySh4rS5uyegfhuhWnqlkd/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 50 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1EDnVZo82PR2K6Sbzwwn3k-b23a-TNOoG/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 50: Yo-kai Watch EP50</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EDnVZo82PR2K6Sbzwwn3k-b23a-TNOoG/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 51 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DOg3UA9YJjUGstNX97iHf_VfDoQ4ypkh/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 51: Yo-kai Watch EP51</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DOg3UA9YJjUGstNX97iHf_VfDoQ4ypkh/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 52 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DZ1TzT3HsDQQpdhiaixqL7cKrhyuum_8/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 52: Yo-kai Watch EP52</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DZ1TzT3HsDQQpdhiaixqL7cKrhyuum_8/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 53 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1EdQ4KOQLwL1BLE8WT9LqZdgrqeF6darK/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 53: Yo-kai Watch EP53</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EdQ4KOQLwL1BLE8WT9LqZdgrqeF6darK/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 54 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1DU825ePmAJ7rQYThUWdhNQWVVaQsJ07m/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 54: Yo-kai Watch EP54</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DU825ePmAJ7rQYThUWdhNQWVVaQsJ07m/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 55 -->
+    <div class="video">
+        <iframe width="300" height="169" src="https://drive.google.com/file/d/1EbGKNZrcbCg_IuCS7HzSDf0AAIeuxKU2/preview"></iframe>
+        <div class="video-description">
+            <p>Episodio 55: Yo-kai Watch EP55</p>
+            <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EbGKNZrcbCg_IuCS7HzSDf0AAIeuxKU2/preview">Ver en Pantalla Completa</button>
+        </div>
+    </div>
+    <!-- Episodio 56 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1EMwMMv-Y26433zwmf9MF1cvTLiPJXmKp/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 56: Yo-kai Watch EP56</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EMwMMv-Y26433zwmf9MF1cvTLiPJXmKp/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 57 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1DopF5-xBWFbmLN0l1b-QMAEIAgsrEhYG/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 57: Yo-kai Watch EP57</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DopF5-xBWFbmLN0l1b-QMAEIAgsrEhYG/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 58 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1Dc9M8YOigaV_2bqy47vyM-12DNmu-Dxh/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 58: Yo-kai Watch EP58</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1Dc9M8YOigaV_2bqy47vyM-12DNmu-Dxh/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 59 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1EMKgKUe10xaYf5PHcgDpd65fbh0BRkVB/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 59: Yo-kai Watch EP59</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EMKgKUe10xaYf5PHcgDpd65fbh0BRkVB/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 60 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1DarLwYy-CN9wlsrjcId1lhFtFwMzxyWe/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 60: Yo-kai Watch EP60</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1DarLwYy-CN9wlsrjcId1lhFtFwMzxyWe/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 61 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1EnyFtsTYw4KIJuimzAyi2YC7cV9X8hYq/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 61: Yo-kai Watch EP61</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EnyFtsTYw4KIJuimzAyi2YC7cV9X8hYq/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 62 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1EavXeCMCztJyY0o9sGPYkns-4RkHA7bP/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 62: Yo-kai Watch EP62</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EavXeCMCztJyY0o9sGPYkns-4RkHA7bP/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 63 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1ENUQIjo6B_ZMCS9EVZq0Jh6fjyS2-puu/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 63: Yo-kai Watch EP63</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1ENUQIjo6B_ZMCS9EVZq0Jh6fjyS2-puu/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 64 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1EU9ChFRlFvIbJl4CSigB9ytus1y8c3fK/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 64: Yo-kai Watch EP64</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1EU9ChFRlFvIbJl4CSigB9ytus1y8c3fK/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 65 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-0iaejRGAEERDA_F9HDB0_JZvLkz_bPi/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 65: Yo-kai Watch EP65</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-0iaejRGAEERDA_F9HDB0_JZvLkz_bPi/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 66 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/10nufPOI84FzOal3QGjnfKNZ0kQULbmJC/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 66: Yo-kai Watch EP66</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/10nufPOI84FzOal3QGjnfKNZ0kQULbmJC/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 67 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-E91HN2tzdo8oI5cqSh3dVEq_nsWh95H/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 67: Yo-kai Watch EP67</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-E91HN2tzdo8oI5cqSh3dVEq_nsWh95H/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 68 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-Q5QeBOjwr1icuOcXSznvfS1srMtAGzu/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 68: Yo-kai Watch EP68</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-Q5QeBOjwr1icuOcXSznvfS1srMtAGzu/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 69 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-Qv9lYwojoTbdZjHJPDEGOkAY52DUbiU/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 69: Yo-kai Watch EP69</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-Qv9lYwojoTbdZjHJPDEGOkAY52DUbiU/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 70 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-NuzmBjBaiSvHa3fhfNgHo__ibQelaBM/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 70: Yo-kai Watch EP70</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-NuzmBjBaiSvHa3fhfNgHo__ibQelaBM/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 71 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-J-3q2pvliZ7wNnTj9Ifw58eUk2YV82W/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 71: Yo-kai Watch EP71</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-J-3q2pvliZ7wNnTj9Ifw58eUk2YV82W/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 72 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-DSlQXdcj80O-gzd0EmEOlm3YH59kE0X/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 72: Yo-kai Watch EP72</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-DSlQXdcj80O-gzd0EmEOlm3YH59kE0X/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 73 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-Lb1FRMiQXBHeQO2fQPbWRgu4hCyuoc3/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 73: Yo-kai Watch EP73</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-Lb1FRMiQXBHeQO2fQPbWRgu4hCyuoc3/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 74 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-BIh2nzHpMLqiFuKxnZ9xKCpJZATfhgt/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 74: Yo-kai Watch EP74</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-BIh2nzHpMLqiFuKxnZ9xKCpJZATfhgt/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 75 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-LsvjEli8nxe8PAWd_yvmUdBPvs6QmRD/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 75: Yo-kai Watch EP75</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-LsvjEli8nxe8PAWd_yvmUdBPvs6QmRD/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+<!-- Episodio 76 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-PHhUFx-UVCvzrj-lVVzUn-QOo2zirLn/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 76: Yo-kai Watch EP76</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-PHhUFx-UVCvzrj-lVVzUn-QOo2zirLn/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+</div>
+ <!-- Temporada 3 -->
+    <div class="temporada-container">
+        <h2>Temporada 3</h2>
+       <!-- Episodio 77 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11B5XHg4CSSILuHU4A64ntIOP6BdKoqo2/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 77: Yo-kai Watch EP77</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11B5XHg4CSSILuHU4A64ntIOP6BdKoqo2/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 78 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11X8kcfQJZ9-YEs3iXMdYESRh50HtWrBi/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 78: Yo-kai Watch EP78</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11X8kcfQJZ9-YEs3iXMdYESRh50HtWrBi/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 79 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11tWsrinIxNnyK1YXyYAAI0tEl_ndYDwN/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 79: Yo-kai Watch EP79</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11tWsrinIxNnyK1YXyYAAI0tEl_ndYDwN/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 80 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/12442qKnQo_UG3Xl8jFSTYfmNjGMZ9YKu/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 80: Yo-kai Watch EP80</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/12442qKnQo_UG3Xl8jFSTYfmNjGMZ9YKu/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 81 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11eeYiOOv3tl2Qbmz9o-2mQ3gza0UiLIs/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 81: Yo-kai Watch EP81</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11eeYiOOv3tl2Qbmz9o-2mQ3gza0UiLIs/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 82 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11SCY6-sQO2yI6WKDSG36Ixh6cudgK5Vb/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 82: Yo-kai Watch EP82</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11SCY6-sQO2yI6WKDSG36Ixh6cudgK5Vb/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 83 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11fg7hvtsgDhsYiJ-UgdDm7eSDqryEni_/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 83: Yo-kai Watch EP83</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11fg7hvtsgDhsYiJ-UgdDm7eSDqryEni_/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 84 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11Om7EAdV0JRLnFNdX-kBS81ZxqevrQPM/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 84: Yo-kai Watch EP84</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11Om7EAdV0JRLnFNdX-kBS81ZxqevrQPM/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 85 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11ff2O59xWTzh6enKH_47YcqOmD4FnXze/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 85: Yo-kai Watch EP85</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11ff2O59xWTzh6enKH_47YcqOmD4FnXze/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 86 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11WWawNLXpq1WyEkQilQcwHwREVECOQV7/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 86: Yo-kai Watch EP86</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11WWawNLXpq1WyEkQilQcwHwREVECOQV7/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 87 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/119n3H_nAnb7iksn5As-VhM9-vO_Di7Q3/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 87: Yo-kai Watch EP87</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/119n3H_nAnb7iksn5As-VhM9-vO_Di7Q3/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 88 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11qmV6I7RwrxJf4wTQnGMd9HFVMjEb2HG/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 88: Yo-kai Watch EP88</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11qmV6I7RwrxJf4wTQnGMd9HFVMjEb2HG/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 89 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11otxTtE677FvohAhNL5xcPLmewoP6lG8/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 89: Yo-kai Watch EP89</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11otxTtE677FvohAhNL5xcPLmewoP6lG8/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 90 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11yL-vEJ9n37bu7Riv0SNXH7mbsoPcweZ/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 90: Yo-kai Watch EP90</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11yL-vEJ9n37bu7Riv0SNXH7mbsoPcweZ/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 91 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11D1ErsCNkLHrm8pdTl8SI8VcYuozjv2_/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 91: Yo-kai Watch EP91</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11D1ErsCNkLHrm8pdTl8SI8VcYuozjv2_/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 92 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/120F6eJRoNkt8iFr5HXNlFVcClsZEjE14/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 92: Yo-kai Watch EP92</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/120F6eJRoNkt8iFr5HXNlFVcClsZEjE14/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 93 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1218pCThZlq5vXTxJT3GUVEQ2T8ekWtZM/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 93: Yo-kai Watch EP93</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1218pCThZlq5vXTxJT3GUVEQ2T8ekWtZM/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 94 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11QooWMxenR6W1l5iraXhqZxZCAKPr7O4/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 94: Yo-kai Watch EP94</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11QooWMxenR6W1l5iraXhqZxZCAKPr7O4/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 95 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11ZwhH4UiQbZBcpZjb8Bj3I4JmFRFvmng/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 95: Yo-kai Watch EP95</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11ZwhH4UiQbZBcpZjb8Bj3I4JmFRFvmng/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 96 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/122Rdf07pXJn2P0ZD-v-fgl-BkYhWZzLo/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 96: Yo-kai Watch EP96</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/122Rdf07pXJn2P0ZD-v-fgl-BkYhWZzLo/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 97 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11jaYfnXT_tEIARP-aZEOOLnvAwdsuJoj/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 97: Yo-kai Watch EP97</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11jaYfnXT_tEIARP-aZEOOLnvAwdsuJoj/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 98 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/14PIpdL4fj0nxDTOIA1uXpyy6aNEZAyFF/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 98: Yo-kai Watch EP98</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14PIpdL4fj0nxDTOIA1uXpyy6aNEZAyFF/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 99 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11J5zQPgS7biSrzU3Ic8IhijGRG3On5mP/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 99: Yo-kai Watch EP99</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11J5zQPgS7biSrzU3Ic8IhijGRG3On5mP/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 100 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/14P7PQJhxUf-Pzfc87m9rLOK-DZPFC0qR/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 100: Yo-kai Watch EP100</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14P7PQJhxUf-Pzfc87m9rLOK-DZPFC0qR/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 101 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/11ZnIR060zL4pvsKOqx-X3yKNQB4MLPm_/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 101: Yo-kai Watch EP101</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/11ZnIR060zL4pvsKOqx-X3yKNQB4MLPm_/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 102 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/13auoBaR_SXFQSdij7_NyJHtmzvAvPFA9/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 102: Yo-kai Watch EP102</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13auoBaR_SXFQSdij7_NyJHtmzvAvPFA9/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 103 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/13A7X5sTytl4BWA0hTgwMz83qRz1MX8b8/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 103: Yo-kai Watch EP103</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13A7X5sTytl4BWA0hTgwMz83qRz1MX8b8/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 104 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/14BlHe-nu1D57FxNbXrrTqC0ZvGx_TGuz/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 104: Yo-kai Watch EP104</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14BlHe-nu1D57FxNbXrrTqC0ZvGx_TGuz/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 105 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/13ySD5jY2MFzouLKaQ6Fd_VGOyKCcyjw8/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 105: Yo-kai Watch EP105</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13ySD5jY2MFzouLKaQ6Fd_VGOyKCcyjw8/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 106 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/13wEe7-nJoJk4HCXsaQg4CVnZctkufhW8/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 106: Yo-kai Watch EP106</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13wEe7-nJoJk4HCXsaQg4CVnZctkufhW8/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 107 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/147IjWMct6zrRHtdWn1QLKy2aNWriTddT/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 107: Yo-kai Watch EP107</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/147IjWMct6zrRHtdWn1QLKy2aNWriTddT/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 108 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/13CVAL38BhjtYK-oyh088zeMYBFR8-jY0/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 108: Yo-kai Watch EP108</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13CVAL38BhjtYK-oyh088zeMYBFR8-jY0/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 109 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/144LJWtrtz-sC6poqYkwx7DNL9V3x3tu7/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 109: Yo-kai Watch EP109</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/144LJWtrtz-sC6poqYkwx7DNL9V3x3tu7/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 110 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/14u3NRZr55NutD7KuduXjLBUX5KNy9y9U/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 110: Yo-kai Watch EP110</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14u3NRZr55NutD7KuduXjLBUX5KNy9y9U/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 111 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/13oP5U4_BzfV8Q8hlM-BDD2pgrz_pNjdX/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 111: Yo-kai Watch EP111</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13oP5U4_BzfV8Q8hlM-BDD2pgrz_pNjdX/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 112 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/14CIo9rRQhzyKbVmePrw9djP9wosLc2_q/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 112: Yo-kai Watch EP112</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14CIo9rRQhzyKbVmePrw9djP9wosLc2_q/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 113 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/13W1ebhrDAK1oAZbLAskqyrI_VVe_THOp/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 113: Yo-kai Watch EP113</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/13W1ebhrDAK1oAZbLAskqyrI_VVe_THOp/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 114 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1447G9gU-LBaB4UMquaPQzG8E2GQYJPpz/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 114: Yo-kai Watch EP114</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1447G9gU-LBaB4UMquaPQzG8E2GQYJPpz/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 115 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/14JwPLJnfVBsD7zumzVZlge9grDm7rs0A/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 115: Yo-kai Watch EP115</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14JwPLJnfVBsD7zumzVZlge9grDm7rs0A/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 116 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/14akBj-3_j9gdNxEVeshDCRg1ueJVusfj/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 116: Yo-kai Watch EP116</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/14akBj-3_j9gdNxEVeshDCRg1ueJVusfj/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 117 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/106KawPlO0A9WusSZMMKQf2lr7AhCOEgE/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 117: Yo-kai Watch EP117</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/106KawPlO0A9WusSZMMKQf2lr7AhCOEgE/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 118 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/10XHo6UjzOJTuIhDYwRlJio8mVQ0P08vH/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 118: Yo-kai Watch EP118</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/10XHo6UjzOJTuIhDYwRlJio8mVQ0P08vH/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 119 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-o08wWSdEq9UuObkgiAao_V-8DfyzTkP/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 119: Yo-kai Watch EP119</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-o08wWSdEq9UuObkgiAao_V-8DfyzTkP/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 120 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-h9NRDL7KgG-rfcw7lv8jR4mfTRq2ZnD/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 120: Yo-kai Watch EP120</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-h9NRDL7KgG-rfcw7lv8jR4mfTRq2ZnD/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 121 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/10H0enmBDD9A3B6OsLn-jRcuzglU2d8JO/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 121: Yo-kai Watch EP121</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/10H0enmBDD9A3B6OsLn-jRcuzglU2d8JO/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 122 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-Pq_XEPkAhWvUNYuVRgf4qtwwE8hri-F/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 122: Yo-kai Watch EP122</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-Pq_XEPkAhWvUNYuVRgf4qtwwE8hri-F/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 123 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/108SiLXSSvUEDXnc_Z86DzASy1PmJoxy3/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 123: Yo-kai Watch EP123</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/108SiLXSSvUEDXnc_Z86DzASy1PmJoxy3/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 124 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-l7e1TnGsNY6SwLaMk9NMae85pwI0WPY/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 124: Yo-kai Watch EP124</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-l7e1TnGsNY6SwLaMk9NMae85pwI0WPY/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 125 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/10ZjxuA0hPCzJ-mtGGo_81CB32757qGdp/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 125: Yo-kai Watch EP125</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/10ZjxuA0hPCzJ-mtGGo_81CB32757qGdp/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 126 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-V16N7kRYxhNcVgA2QrlzCNsP4QjM3x3/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 126: Yo-kai Watch EP126</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-V16N7kRYxhNcVgA2QrlzCNsP4QjM3x3/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 127 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/108iaEl6qBrmtiBHrORdbNSIwJPK3ZSUI/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 127: Yo-kai Watch EP127</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/108iaEl6qBrmtiBHrORdbNSIwJPK3ZSUI/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 128 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-kHeUtFKwQv115Kq1yD06IUFZ9kfAL-l/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 128: Yo-kai Watch EP128</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-kHeUtFKwQv115Kq1yD06IUFZ9kfAL-l/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 129 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/10Ua47utZoG_qtHJm24PYbBIoqoBRQ5Jr/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 129: Yo-kai Watch EP129</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/10Ua47utZoG_qtHJm24PYbBIoqoBRQ5Jr/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Episodio 130 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/1-Yzr-Sx2fGACBZfQXjX-25SWcnxB-nq4/preview"></iframe>
+    <div class="video-description">
+        <p>Episodio 130: Yo-kai Watch EP130</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/1-Yzr-Sx2fGACBZfQXjX-25SWcnxB-nq4/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+</div>
+ <!-- Películas -->
+    <div class="temporada-container">
+        <h2>Películas</h2>
+<!-- Película 1 (Yo-kai Watch La Película) -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/109DWbJWbtLO5__Ww5-3dCkCleX79yBXE/preview"></iframe>
+    <div class="video-description">
+        <p>Película 1: Yo-kai Watch La Película</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/109DWbJWbtLO5__Ww5-3dCkCleX79yBXE/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Película 2 (Las 5 Historias Nyan) -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/10N1Nvr-MrWSuVHG3B89tYU3jtNEs7PcM/preview"></iframe>
+    <div class="video-description">
+        <p>Película 2: Las 5 Historias Nyan</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/10N1Nvr-MrWSuVHG3B89tYU3jtNEs7PcM/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Película 3 -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/10oHy7bYiCew1XjwCAuAY1IzVfQCofG_k/preview"></iframe>
+    <div class="video-description">
+        <p>Película 3: La gran aventura de la ballena voladora y el doble mundo</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/10oHy7bYiCew1XjwCAuAY1IzVfQCofG_k/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+
+<!-- Película 5 (Forever Friends) -->
+<div class="video">
+    <iframe width="300" height="169" src="https://drive.google.com/file/d/19mXfAw-OmsQZikYtAfJhyl9kEtmW3U2U/preview"></iframe>
+    <div class="video-description">
+        <p>Película 5: Forever Friends</p>
+        <button class="fullscreen-button" data-src="https://drive.google.com/file/d/19mXfAw-OmsQZikYtAfJhyl9kEtmW3U2U/preview">Ver en Pantalla Completa</button>
+    </div>
+</div>
+</div>
+
+
+    <div class="fullscreen-container" id="fullscreen-container">
+        <iframe class="fullscreen-video" id="fullscreen-video"></iframe>
+        <button class="back-button" id="back-button">Cerrar Pantalla Completa</button>
+    </div>
+
+    <script>
+        const videos = document.querySelectorAll('.video');
+        const fullscreenContainer = document.getElementById('fullscreen-container');
+        const fullscreenVideo = document.getElementById('fullscreen-video');
+        const backButton = document.getElementById('back-button');
+
+        videos.forEach(video => {
+            const iframe = video.querySelector('iframe');
+            const fullscreenButton = video.querySelector('.fullscreen-button');
+            const src = fullscreenButton.getAttribute('data-src');
+
+            fullscreenButton.addEventListener('click', () => {
+                fullscreenVideo.src = src;
+                fullscreenContainer.style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // Evitar el desplazamiento en pantalla completa
+            });
+        });
+
+        backButton.addEventListener('click', () => {
+            fullscreenVideo.src = '';
+            fullscreenContainer.style.display = 'none';
+            document.body.style.overflow = 'auto'; // Restaurar el desplazamiento después de cerrar pantalla completa
+        });
+    </script>
+</body>
+</html>
+
